@@ -27,16 +27,17 @@ module.exports = async (sequelize, DataTypes) => {
       document: {
         type: DataTypes.STRING,
         allowNull: false,
-        key: true,
+        key: true
+      },
+      subdocument: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null,
+        key: true
       },
       text: {
         type: DataTypes.TEXT,
         allowNull: false,
-      },
-      order: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        defaultValue: null,
       },
       user: {
         type: DataTypes.STRING,

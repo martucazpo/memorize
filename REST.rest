@@ -1,0 +1,27 @@
+POST http://localhost:5000/material/TestDocument HTTP/1.1
+content-type: application/json
+
+{
+    "subdocument": "Other Test Sub Document",
+    "text": "Pellentesque ut sodales arcu. Nullam euismod sapien dui, eget pharetra lectus posuere et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Class aptent taciti sociosqu.",
+    "user": "User"
+}
+
+###
+
+GET http://localhost:5000/delete/b3c13bf728dc11ebb13c00ff48720ba0 HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:5000/delete/deleteSubDocument HTTP/1.1
+content-type: application/json
+
+{
+    "subdocument":"Other Test Sub Document"
+}
+
+
+###
+
+GET http://localhost:5000/delete/document/TestDocument
