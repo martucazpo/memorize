@@ -17,5 +17,25 @@ module.exports = {
   deleteDocuments: function (req, res) {
     let document = req.params.document;
     materialFunctions.deleteDocuments(document, res);
+  },
+  updateOneDocumentTitle: function (req, res) {
+    let id = req.params.id;
+    let document = req.body.document;
+    materialFunctions.updateOneDocumentTitle(id, document, res);
+  },
+  updateOneDocumentSubdocument: function (req, res) {
+    let id = req.params.id;
+    let subdocument = req.body.subdocument;
+    materialFunctions.updateOneDocumentSubdocument(id, subdocument, res);
+  },
+  updateDocumentTitle: function (req, res) {
+    let oldTitle = req.params.document;
+    let title = req.body.title;
+    materialFunctions.updateDocumentTitle(title, oldTitle, res);
+  },
+  updateSubdocumentTitle: function (req, res) {
+    let oldSubdocumentTitle = req.params.subdocument;
+    let title = req.body.title;
+    materialFunctions.updateSubdocumentTitle(title, oldSubdocumentTitle, res);
   }
 };

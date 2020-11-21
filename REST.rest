@@ -2,6 +2,7 @@ POST http://localhost:5000/material/TestDocument HTTP/1.1
 content-type: application/json
 
 {
+    "document": "Test Document",
     "subdocument": "Other Test Sub Document",
     "text": "Pellentesque ut sodales arcu. Nullam euismod sapien dui, eget pharetra lectus posuere et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Class aptent taciti sociosqu.",
     "user": "User"
@@ -24,4 +25,41 @@ content-type: application/json
 
 ###
 
-GET http://localhost:5000/delete/document/TestDocument
+GET http://localhost:5000/delete/document/TestDocument HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:5000/material/update/title/636c892c2c0011ebb13c00ff48720ba0 HTTP/1.1
+content-type: application/json
+
+{
+    "document": "Lettuce C"
+}
+
+###
+
+POST http://localhost:5000/material/update/subdocument/636c892c2c0011ebb13c00ff48720ba0 HTTP/1.1
+content-type: application/json
+
+{
+    "subdocument": "A leaf at Sea"
+}
+
+###
+
+POST http://localhost:5000/material/update/document/TestDocument HTTP/1.1
+content-type: application/json
+
+{
+    "title" : "My new Document"
+}
+
+###
+
+POST http://localhost:5000/material/update/subdocument/Other%20Test%20Sub%20Document HTTP/1.1
+content-type: application/json
+
+{
+    "title" : "Tasty"
+}
